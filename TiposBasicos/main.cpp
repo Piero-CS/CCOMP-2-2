@@ -5,9 +5,37 @@ using namespace std;
 int main()
 {
     //Conversion de Char a Int sin castear
-    char car = '6';
-    int num = car - '0';
-    cout << "El valor entero es: " << num << std::endl;
+    char val;
+    cout << "Ingrese un caracter: ";
+    cin >> val;
+    cout << "El caracter ingresado es: " << val << endl;
+    int num = static_cast<int>(val);
+    cout << "El valor numero es: " << num << endl;
+
+    //Mayuscula o no
+    char car;
+    cout << "Ingrese un caracter: ";
+    cin >> car;
+    int num2 = static_cast<int>(car);
+    if (num2 >= 65 && num2 <= 90)
+    {
+        cout << "El caracter ingresado es una mayuscula" << endl;
+    }
+    else if (num2 >= 97 && num2 <= 122)
+    {
+        cout << "El caracter ingresado es una minuscula" << endl;
+    }
+    else if (num2 >= 48 && num2 <= 57)
+    {
+        cout << "El caracter ingresado es un numero" << endl;
+    }
+    else
+    {
+        cout << "El caracter ingresado no es del abecedario" << endl;
+    }
+
+
+
 
     //Calculadora
     double val1, val2, result;
