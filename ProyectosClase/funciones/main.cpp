@@ -5,7 +5,7 @@
 int potencia(int base, int exp)
 {
     int result = 1;
-    for (int i = 0; i < exp; i++)
+    for (int i = 0; i < exp; i++) ///i++ (post-incremento) - ++i (pre-incremento)
     {
         result *= base;
     }
