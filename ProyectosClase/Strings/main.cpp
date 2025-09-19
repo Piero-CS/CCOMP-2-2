@@ -39,7 +39,7 @@ int main()
     std::string cadena1, cadena2;
     char letra{' '};
     int a{0}, b{0};
-    /*
+
     std::cout << "================= Contador de Letras =================" << std::endl;
     std::cout << "Ingrese una oracion: ";
     getline(std::cin, cadena1);
@@ -50,7 +50,7 @@ int main()
     std::cout << "============= Palindromo =================" << std::endl;
     std::cout << "Ingrese una palabra: ";
     std::cin >> cadena2;
-    ((esPalindromo(cadena2)) ? std::cout << "Es palindromo": std::cout << "No es palindromo"); */
+    ((esPalindromo(cadena2)) ? std::cout << "Es palindromo": std::cout << "No es palindromo") << std::endl;
 
     std::cout << "============= Intercambio de valores =================" << std::endl;
     std::cout << "Ingrese a: ";
