@@ -36,6 +36,14 @@ int main()
         }
     }
 
+    for(int i{0}; i < n; i++)
+    {
+        for(int j{0}; j < n; j++)
+        {
+            if(j == 0 || j == i || i == n-1) ptr_matriz[i][j] = '*';
+        }
+    }
+
     //Imprimir matriz
     printMatriz(ptr_matriz, n);
 

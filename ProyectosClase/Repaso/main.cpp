@@ -61,32 +61,17 @@ int main()
     llenar(ptr_minus, nmin, 97, 122);
 
     //Llenar matriz n x m;
-    int idxMayus{0}, idxMinus{0}, idxNum{0};
+    int idxMayus = 0, idxMinus = 0;
 
-    for(int i{0}; i < n; i++)
-        {
-            for(int j{0}; j < m; j++)
-            {
-                int num = std::rand() % 2;
-                switch(num)
-                {
-                    case 0: //Minusculas
-                        if(idxMinus < nmin)
-                        {
-                            ptr_matriz[i][j] = ptr_minus[idxMinus];
-                            idxMinus++;
-                        }
-                        break;
-                    case 1:
-                        if(idxMayus < nmay)
-                        {
-                            ptr_matriz[i][j] = ptr_mayus[idxMayus];
-                            idxMayus++;
-                        }
-                        break;
-                }
-            }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (idxMayus < nmay)
+                ptr_matriz[i][j] = ptr_mayus[idxMayus++];
+            else
+                ptr_matriz[i][j] = ptr_minus[idxMinus++];
         }
+    }
+
 
     //Imprimir Matriz
     printMatriz(ptr_matriz, n, m);

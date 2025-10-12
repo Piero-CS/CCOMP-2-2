@@ -52,7 +52,7 @@ int main()
         {
             inicio = i - centro;
             fin = n - 1 - inicio;
-        }+
+        }
 
         ptr_matriz[i][inicio] = '*';
         ptr_matriz[i][fin] = '*';
