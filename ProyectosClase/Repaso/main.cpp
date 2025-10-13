@@ -65,13 +65,15 @@ int main()
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            if (idxMayus < nmay)
+            bool esMayus = std::rand() % 2;
+            if (idxMayus < nmay && esMayus)
                 ptr_matriz[i][j] = ptr_mayus[idxMayus++];
-            else
+            else if(idxMinus < nmin)
                 ptr_matriz[i][j] = ptr_minus[idxMinus++];
+            else
+                ptr_matriz[i][j] = ptr_mayus[idxMayus++];
         }
     }
-
 
     //Imprimir Matriz
     printMatriz(ptr_matriz, n, m);
@@ -87,5 +89,3 @@ int main()
 
     return 0;
 }
-
-
