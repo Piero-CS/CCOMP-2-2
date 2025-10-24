@@ -28,11 +28,11 @@ void bubbleSort(int *ptr, int tam)
 {
     for(int i{0}; i < tam - 1; i++)
     {
-        for(int j = i + 1; j < tam - i - 1; j++)
+        for(int j = 0; j < tam - i - 1; j++)
         {
-            if(*(ptr + i) > *(ptr + j))
+            if(*(ptr + j) > *(ptr + j + i))
             {
-                intercambio(ptr + i, ptr + j);
+                intercambio(ptr + j, ptr + j + 1);
             }
         }
     }
