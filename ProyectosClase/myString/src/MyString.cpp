@@ -1,36 +1,51 @@
 #include "MyString.h"
 
-int longitudCadena(char* data)
+MyString::MyString(char *data)
 {
-    int contador = 0;
-    while(data[contador] != '\0')
+    longitud = 0;
+    while(data[longitud] != '\0')
     {
-        contador++;
+        longitud++;
     }
-    return contador;
+    texto = new char[longitud + 1];
+    for(int i{0}; i < longitud; i++)
+    {
+        texto[i] = data[i];
+    }
+    texto[longitud] = '\0';
 }
 
-void copiarString(char* data, char* texto)
+void MyString::toUpper()
 {
-    int contador = 0;
-    while(data[contador] != '\0')
+    for(int i{0}; i < longitud; i++)
     {
-        texto[contador] = data[contador];
-        contador++;
+        if(texto[i] >= 97 && texto[i] <= 122)
+        {
+            texto[i] -= 32;
+        }
     }
     return;
 }
 
-MyString::MyString(char *data)
+void MyString::toLower()
 {
-    int longitud = longitudCadena(data);
-    texto = new char[longitud + 1];
-    copiarString(data, texto);
+    for(int i{0}; i < longitud; i++)
+    {
+        if(texto[i] >= 65 && texto[i] <= 90)
+        {
+            texto[i] += 32;
+        }
+    }
 }
 
-void MyString::mostrar() const
+int MyString::getSize() const
 {
-    std::cout << texto << std::endl;
+    return longitud;
+}
+
+char* MyString::getData() const
+{
+    return texto;
 }
 MyString::~MyString()
 {

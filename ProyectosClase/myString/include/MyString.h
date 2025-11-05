@@ -6,11 +6,16 @@ class MyString
 {
     public:
         MyString(char *data);
-        void mostrar() const;
+        int getSize() const;
+        char* getData() const;
+
+        void toUpper();
+        void toLower();
         ~MyString();
 
     private:
         char* texto;
+        int longitud;
 };
 
 #endif // MYSTRING_H
