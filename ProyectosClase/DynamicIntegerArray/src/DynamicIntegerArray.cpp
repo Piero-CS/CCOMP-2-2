@@ -23,7 +23,7 @@ int DynamicIntegerArray::getSize() const
 
 void DynamicIntegerArray::push_back(int val)
 {
-    tmp = new int[longitud + 1];
+    int *tmp = new int[longitud + 1];
     for(int i{0};i < longitud; i++)
     {
         tmp[i] = data[i];
@@ -32,8 +32,34 @@ void DynamicIntegerArray::push_back(int val)
     longitud ++;
     delete[] data;
     data = tmp;
-
 }
+
+void DynamicIntegerArray::insert(int val, int pos)
+{
+    int *tmp = new int[longitud + 1];
+    for(int i{0}; i < pos; i++)
+    {
+        tmp[i] = data[i]
+    }
+    for(int i = pos; i < longitud; i++)
+    {
+        tmp[i+1] = data[i]
+    }
+    tmp[pos] = val;
+    longitud++;
+    delete[] data;
+    data = tmp;
+}
+
+void DynamicIntegerArray::remove(int pos)
+{
+    int *tmp = new int[longitud-1];
+    for(int i = 0; i < pos; i++)
+    {
+        tmp[i] = data[i]
+    }
+}
+
 void DynamicIntegerArray::print() const
 {
     std::cout << "[ ";

@@ -11,11 +11,12 @@ class DynamicIntegerArray
         int getSize() const;
         void print() const;
         void push_back(int val);
+        void insert(int val, int pos);
+        void remove(int pos);
         ~DynamicIntegerArray();
 
     private:
         int* data;
-        int* tmp;
         int longitud;
 };
 

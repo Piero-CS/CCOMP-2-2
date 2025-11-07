@@ -11,6 +11,7 @@ int main()
     std::cout << arr2.getSize() << std::endl;
     arr2.print();
     arr2.push_back(10);
+    arr2.insert(30, 2);
     arr2.print();
     return 0;
 }
