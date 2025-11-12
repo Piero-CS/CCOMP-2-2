@@ -16,6 +16,16 @@ DynamicIntegerArray::DynamicIntegerArray(int arr[], int size)
     }
 }
 
+DynamicIntegerArray::DynamicIntegerArray(DynamicIntegerArray &o)
+{
+    longitud = o.longitud;
+    data = new int[longitud];
+    for(int i{0}; i < longitud; i++)
+    {
+        data[i] = o.data[i];
+    }
+}
+
 int DynamicIntegerArray::getSize() const
 {
     return longitud;
@@ -58,7 +68,7 @@ void DynamicIntegerArray::remove(int pos)
     {
         tmp[i] = data[i];
     }
-    for(int i = pos; i < longitud; i++)
+    for(int i = pos; i < longitud - 1; i++)
     {
         tmp[i] = data[i+1];
     }
